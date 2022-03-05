@@ -8,7 +8,15 @@ environment:
   flutter: ">=2.10.2"
 
 dependencies:
+  code_generation_annotation:
+    git:
+      url: https://github.com/RAE-Health/code_generation.git
+      # url: git@github.com:RAE-Health/code_generation.git
+      path: packages/code_generation_annotation
   cupertino_icons: ^1.0.4
+  extensions_package:
+    git:
+      url: https://github.com/RAE-Health/extensions_package.git
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
@@ -16,12 +24,22 @@ dependencies:
     sdk: flutter
   flutter_modular: ^4.4.1
   hive_flutter: ^1.1.0
+  log:
+    git:
+      url: https://github.com/RAE-Health/log.git
+  json_annotation: ^4.4.0
 
 dependency_overrides: null
 
 dev_dependencies:
-  flutter_lints: ^1.0.4
   build_runner:
+  code_generation:
+    git:
+      url: https://github.com/RAE-Health/code_generation.git
+      # url: git@github.com:RAE-Health/code_generation.git
+      path: packages/code_generation
+  flutter_lints: ^1.0.4
+  json_serializable:
   test:
 
 flutter:

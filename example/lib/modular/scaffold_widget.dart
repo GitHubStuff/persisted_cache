@@ -2,6 +2,7 @@ import 'package:extensions_package/extensions_package.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:language_package/language_package.dart';
+import 'package:persisted_cache/persisted_cache.dart';
 import 'package:rae_localization_package/rae_localization_package.dart';
 import 'package:theme_management/theme_management.dart';
 import 'package:widget_tree_package/widet_tree_package.dart';
@@ -57,7 +58,7 @@ class _ScaffoldWidget extends ObservingStatefulWidget<ScaffoldWidget> with Popov
               ),
             ],
           ),
-        ).borderAll(Colors.blueAccent).paddingAll(3.0),
+        ).borderAll(Colors.blueAccent).paddingAll(3.0).removed(true),
         Container(
           child: Padding(
             padding: const EdgeInsets.all(4.0),
@@ -91,20 +92,7 @@ class _ScaffoldWidget extends ObservingStatefulWidget<ScaffoldWidget> with Popov
             )
             .paddingAll(3.0),
         SizedBox(height: 4),
-        ElevatedButton(
-            onPressed: () {
-              setState(() {
-                LocalizationInformation.next();
-              });
-            },
-            child: LocalizationInformation.buttonText()),
-        Expanded(
-          flex: 2,
-          child: ListView.builder(
-            itemCount: LocalizationInformation(context: context).length,
-            itemBuilder: (context, index) => LocalizationInformation.at(index: index, context: context),
-          ),
-        ),
+        InputWidget(),
         SizedBox(height: 72.0),
       ],
     );
