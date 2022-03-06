@@ -8,7 +8,7 @@ Primary use is for SQLite examination. This allows for SELECT and other statemen
 dependencies:
   persisted_cache:
     git:
-      url: https://github.com/GitHubStuff/persisted_cache.git
+      url: https://github.com/RAE-Health/persisted_cache.git
 ```
 
 ***- OR -***
@@ -17,7 +17,7 @@ dependencies:
 dependencies:
   persisted_cache:
     git:
-      url: https://github.com/GitHubStuff/persisted_cache.git
+      url: https://github.com/RAE-Health/persisted_cache.git
 ```
 
 ## Import
