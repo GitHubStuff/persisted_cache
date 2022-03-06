@@ -17,7 +17,7 @@ dependencies:
 dependencies:
   persisted_cache:
     git:
-      url: https://github.com/RAE-Health/persisted_cache.git
+      url: https://github.com/GitHubStuff/persisted_cache.git
 ```
 
 ## Import
@@ -39,8 +39,11 @@ In *app_module.dart*
 ```dart
 Bind.factory((i) => PersistedCubit()),
 
-/// When '
+/// When 'Save' is tapped PersistedCache
+emit(PersistedStateNewItem(newInput));
 ```
+
+Since the PersistedCache is defined in the AppModule any other widget/element can subscribe and be notified when there is a new/(or previously stored) string is selected.
 
 The widget itself:
 

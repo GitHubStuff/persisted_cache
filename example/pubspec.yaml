@@ -13,30 +13,17 @@ dependencies:
     path: ../
   extensions_package:
     git:
-      url: https://github.com/RAE-Health/extensions_package.git
+      url: https://github.com/GitHubStuff/extensions_package.git
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_localizations:
     sdk: flutter
   flutter_modular: ^4.4.1
-  language_package:
-    git:
-      url: https://github.com/RAE-Health/language_package.git
-  rae_localization_package:
-    git:
-      url: https://github.com/RAE-Health/rae_localization_package.git
-  theme_management:
-    git:
-      url: https://github.com/RAE-Health/theme_management.git
-  theme_mode_widgets:
-    git:
-      url: https://github.com/RAE-Health/theme_mode_widgets.git
-  widget_tree_package:
-    git:
-      url: https://github.com/RAE-Health/widget_tree_package.git
 
-dependency_overrides: null
+dependency_overrides:
+  persisted_cache:
+    path: ../
 
 dev_dependencies:
   flutter_lints: ^1.0.4

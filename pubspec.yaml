@@ -1,5 +1,5 @@
 name: persisted_cache
-version: 0.0.1+0
+version: 0.0.1+1
 homepage: http://www.icodeforyou.com
 publish_to: 'none'
 
@@ -10,13 +10,12 @@ environment:
 dependencies:
   code_generation_annotation:
     git:
-      url: https://github.com/RAE-Health/code_generation.git
-      # url: git@github.com:RAE-Health/code_generation.git
+      url: https://github.com/GitHubStuff/code_generation.git
       path: packages/code_generation_annotation
   cupertino_icons: ^1.0.4
   extensions_package:
     git:
-      url: https://github.com/RAE-Health/extensions_package.git
+      url: https://github.com/GitHubStuff/extensions_package.git
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
@@ -26,7 +25,7 @@ dependencies:
   hive_flutter: ^1.1.0
   log:
     git:
-      url: https://github.com/RAE-Health/log.git
+      url: https://github.com/GitHubStuff/log.git
   json_annotation: ^4.4.0
 
 dependency_overrides: null
@@ -35,8 +34,7 @@ dev_dependencies:
   build_runner:
   code_generation:
     git:
-      url: https://github.com/RAE-Health/code_generation.git
-      # url: git@github.com:RAE-Health/code_generation.git
+      url: https://github.com/GitHubStuff/code_generation.git
       path: packages/code_generation
   flutter_lints: ^1.0.4
   json_serializable:
