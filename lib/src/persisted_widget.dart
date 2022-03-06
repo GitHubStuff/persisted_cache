@@ -116,6 +116,9 @@ class _PersistedWidget extends ObservingStatefulWidget<PersistedWidet> {
               ElevatedButton(
                   onPressed: () {
                     _persistedCubit.inputResult(_textEditingController.text);
+                    Future.delayed(Duration(milliseconds: 250), () {
+                      context.hideKeyboard();
+                    });
                   },
                   child: _input),
             ],
