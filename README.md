@@ -34,11 +34,9 @@ In *main.dart*
 await PersistedHive.setup();
 ```
 
-In *app_module.dart*
+When a string is entered.
 
 ```dart
-Bind.factory((i) => PersistedCubit()),
-
 /// When 'Save' is tapped PersistedCache
 emit(PersistedStateNewItem(newInput));
 ```

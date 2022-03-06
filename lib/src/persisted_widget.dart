@@ -1,8 +1,8 @@
 import 'package:extensions_package/extensions_package.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:persisted_cache/src/cubit/persisted_cubit.dart';
+import 'package:persisted_cache/src/cubit/persisted_singleton.dart';
 
 const double _iconSize = 56.0;
 final Widget _input = const Text('Save').padding(left: _iconSize * 0.39, right: _iconSize * 0.39);
@@ -22,7 +22,7 @@ class _PersistedWidget extends ObservingStatefulWidget<PersistedWidet> {
   @override
   void initState() {
     super.initState();
-    _persistedCubit = Modular.get<PersistedCubit>();
+    _persistedCubit = PersistedSingleton().cubit;
     _focusNode = FocusNode();
     _textEditingController = TextEditingController();
   }
