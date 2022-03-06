@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:language_package/language_package.dart';
+import 'package:persisted_cache/persisted_cache.dart';
 import 'package:theme_management/theme_management.dart';
 
 import 'modular/app_module.dart';
@@ -13,6 +14,7 @@ void main() async {
   /// Enable theme changes/monitoring by creating a 'hive' object to persist information
   await ThemeManagement.setup();
   await Language.setup();
+  await PersistedHive.setup();
 
   /// Set BLoC observer for additional console messages
 

@@ -64,12 +64,14 @@ extension PersistedHiveWithHive on PersistedHive {
 // **************************************************************************
 
 PersistedHive _$PersistedHiveFromJson(Map<String, dynamic> json) =>
-    PersistedHive()
-      ..cachedStrings = (json['cachedStrings'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList();
+    PersistedHive(
+      defaultValue: json['defaultValue'] as String? ?? '',
+    )..cachedStrings = (json['cachedStrings'] as List<dynamic>)
+        .map((e) => e as String)
+        .toList();
 
 Map<String, dynamic> _$PersistedHiveToJson(PersistedHive instance) =>
     <String, dynamic>{
       'cachedStrings': instance.cachedStrings,
+      'defaultValue': instance.defaultValue,
     };
