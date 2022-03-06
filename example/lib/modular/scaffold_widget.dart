@@ -92,7 +92,7 @@ class _ScaffoldWidget extends ObservingStatefulWidget<ScaffoldWidget> with Popov
             )
             .paddingAll(3.0),
         SizedBox(height: 4),
-        InputWidget(),
+        PersistedWidet(),
         SizedBox(height: 72.0),
       ],
     );

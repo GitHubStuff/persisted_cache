@@ -1,59 +1,53 @@
 # persisted_cache
 
-This is a template kit (with */example*) to create a Flutter Package.
+Primary use is for SQLite examination. This allows for SELECT and other statements to be persisted and recalled as for queries into a SQLite database. It can also be used to store any collection of strings (up to 20) for recall and broadcast throug PersistedCubit.
 
-The template project is a great foundation for creating packages that uses with BLoC and Modular programming patterns.
+## Install
 
-The package also contains an ad-hoc */example* folder with an app designed to load the new package and quickly allow the developer to create a demo/POC/beta-sample.
+```text
+dependencies:
+  persisted_cache:
+    git:
+      url: https://github.com/GitHubStuff/persisted_cache.git
+```
 
-**^^The */example* that creates an app is also a great foundation for an app beyond development and proof-of-concept(POC)**
+***- OR -***
 
-**Code Generation** Is a key aspect of this package
+```text
+dependencies:
+  persisted_cache:
+    git:
+      url: https://github.com/RAE-Health/persisted_cache.git
+```
 
----
+## Import
 
-## Setup
+```dart
+import 'package:persisted_cache/persisted_cache.dart';
+```
 
-### Changes to content of template
+## Usage
 
-- After un-ziping, rename the folder from _template_package to "new name"
+In *main.dart*
 
-- Rename 'lib/*persisted_cache.dart*' to the "new package name" (eg custom_widget_package.dart)
+```dart
+await PersistedHive.setup();
+```
 
-- Open the project in IDE of choice and search/replace "*persisted_cache*" with "new package name". This 100% works using VSCode.
+In *app_module.dart*
 
-- Search/Replace '*icodeforyou.cache*' with project/company domain.
+```dart
+Bind.factory((i) => PersistedCubit()),
 
-#### NOTE
+/// When '
+```
 
-***icodeforyou.cache** will be part of the reverse domain used by XCode and Android in the app/product name. Choose carefully!*
+The widget itself:
 
-### **Important**: Make these ***Setup*** changes your initial comment to version control before proceeding
+```dart
+PersistedWidet w = PersistedWidet({this.enableAutoCorrect = false});
+```
 
-&nbsp;
-&nbsp;
+## Final Note
 
----
-&nbsp;
-
-## After setup & commit to version control
-
-- Review and update the *README-template.md*
-
-- Delete the *README.md*
-
-- Rename *README-template.md* to *README.md*
-
-- Begin coding.
-
-## Useage
-
-The 'example' directory is an app that includes:
-
-- Usage of [flutter_block](https://pub.dev/packages/flutter_bloc)
-
-- Usage of [flutter_modular](https://pub.dev/packages/flutter_modular)
-
-## Final note
-
-Be kind to each other!
+Be kind to each other

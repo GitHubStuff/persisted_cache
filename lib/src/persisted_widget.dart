@@ -2,19 +2,19 @@ import 'package:extensions_package/extensions_package.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:log/log.dart';
 import 'package:persisted_cache/src/cubit/persisted_cubit.dart';
 
 const double _iconSize = 56.0;
+final Widget _input = const Text('Save').padding(left: _iconSize * 0.39, right: _iconSize * 0.39);
 
-class InputWidget extends StatefulWidget {
+class PersistedWidet extends StatefulWidget {
   final bool enableAutoCorrect;
 
-  InputWidget({this.enableAutoCorrect = false});
-  _InputWidget createState() => _InputWidget();
+  PersistedWidet({this.enableAutoCorrect = false});
+  _PersistedWidget createState() => _PersistedWidget();
 }
 
-class _InputWidget extends ObservingStatefulWidget<InputWidget> {
+class _PersistedWidget extends ObservingStatefulWidget<PersistedWidet> {
   late FocusNode _focusNode;
   late TextEditingController _textEditingController;
   late PersistedCubit _persistedCubit;
@@ -43,17 +43,17 @@ class _InputWidget extends ObservingStatefulWidget<InputWidget> {
           buttons(),
         ],
       ).padding(left: 4.0, bottom: 4),
-    ).borderAll(Colors.blueAccent).paddingAll(3.0);
+    ).borderAll(Colors.amber).paddingAll(3.0);
   }
 
   Widget _textField() {
     return BlocConsumer<PersistedCubit, PersistedState>(
       bloc: _persistedCubit,
       listener: (context, state) {
-        Log.T('Listener-state $state');
+        //Log.T('Listener-state $state');
       },
       builder: (context, state) {
-        Log.T('Builder-state $state');
+        //Log.T('Builder-state $state');
         if (state is PersistedStateInitial) {
           _focusNode.requestFocus();
         }
@@ -71,21 +71,21 @@ class _InputWidget extends ObservingStatefulWidget<InputWidget> {
           focusNode: _focusNode,
           controller: _textEditingController,
           onChanged: (newText) {
-            debugPrint('NewText: $newText');
+            //debugPrint('NewText: $newText');
             _persistedCubit.justCollectInput();
           },
           onEditingComplete: () {
             // Called BEFORE onSubmitted
             _persistedCubit.editingComplete();
             context.hideKeyboard();
-            debugPrint('Enditing complete');
+            //debugPrint('Enditing complete');
           },
           onSubmitted: (newContent) {
-            debugPrint('newContent: $newContent');
+            //debugPrint('newContent: $newContent');
             _persistedCubit.inputResult(newContent);
           },
           onTap: () {
-            debugPrint('OnTap');
+            //debugPrint('OnTap');
             //_persistedCubit.reset();
           },
         );
@@ -117,7 +117,7 @@ class _InputWidget extends ObservingStatefulWidget<InputWidget> {
                   onPressed: () {
                     _persistedCubit.inputResult(_textEditingController.text);
                   },
-                  child: Text('Save').padding(left: 22, right: 22)),
+                  child: _input),
             ],
           );
         });
